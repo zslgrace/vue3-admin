@@ -1,0 +1,13 @@
+@import './variables';
+
+.el-button--primary{
+  background-color: $green;
+  border-color: $green;
+}
+.el-button--primary:hover,
+.el-button--primary:focus,
+.el-button--primary:active {
+  background: $lightgreen;
+  border-color: $lightgreen;
+  color: #FFFFFF;
+}
