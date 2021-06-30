@@ -18,16 +18,14 @@
   </el-menu>
 </template>
 
-<script>
+<script lang="ts">
+import { Options, Vue } from 'vue-class-component';
 import variables from '@/assets/style/variables.scss';
 
-export default {
-  computed: {
-    variables() {
-      return variables;
-    },
-  },
-};
+@Options({})
+export default class Menu extends Vue {
+  variables = variables;
+}
 </script>
 
 <style lang="scss">

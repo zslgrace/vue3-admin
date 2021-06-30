@@ -13,15 +13,10 @@ import {
   Vue,
 } from 'vue-class-component';
 
-@Options({
-  // components: {
-  // },
-  data() {
-    return {
-      value1: true,
-      value2: true,
-    };
-  },
-})
-export default class Home extends Vue {}
+@Options({})
+export default class Home extends Vue {
+  value1 = true;
+
+  value2 = true;
+}
 </script>

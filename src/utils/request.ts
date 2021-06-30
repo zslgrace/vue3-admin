@@ -1,12 +1,12 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'https://some-domain.com/api/',
+  baseURL: process.env.VUE_APP_BASE_URL,
   timeout: 5000,
 });
 
 // 添加请求拦截器
-axios.interceptors.request.use((config) => {
+instance.interceptors.request.use((config) => {
   console.log(config);
   return config;
 }, (error) => {
@@ -15,9 +15,9 @@ axios.interceptors.request.use((config) => {
 });
 
 // 添加响应拦截器
-axios.interceptors.response.use((response) => {
+instance.interceptors.response.use((response) => {
   console.log(response);
-  return response;
+  return response.data;
 }, (error) => {
   console.log(error);
   return Promise.reject(error);
