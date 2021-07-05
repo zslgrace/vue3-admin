@@ -9,6 +9,8 @@ import {
   ElButton,
   ElForm,
   ElFormItem,
+  ElBreadcrumb,
+  ElBreadcrumbItem,
 } from 'element-plus';
 import 'element-plus/packages/theme-chalk/src/base.scss';
 import App from './App.vue';
@@ -29,4 +31,6 @@ createApp(App)
   .use(ElButton)
   .use(ElForm)
   .use(ElFormItem)
+  .use(ElBreadcrumb)
+  .use(ElBreadcrumbItem)
   .mount('#app');

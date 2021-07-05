@@ -59,6 +59,22 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
           title: '账号管理',
         },
       },
+      {
+        path: '/roleInfo',
+        name: 'roleInfo',
+        component: () => import(/* webpackChunkName: "roleInfo" */ '../views/accessControl/RoleInfo.vue'),
+        meta: {
+          title: '角色管理',
+        },
+      },
+      {
+        path: '/menuInfo',
+        name: 'menuInfo',
+        component: () => import(/* webpackChunkName: "menunfo" */ '../views/accessControl/MenuInfo.vue'),
+        meta: {
+          title: '菜单管理',
+        },
+      },
     ],
   },
 ];

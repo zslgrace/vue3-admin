@@ -5,22 +5,25 @@
         <my-menu></my-menu>
       </aside>
       <main class="page-main">
+        <my-header></my-header>
         <router-view></router-view>
       </main>
     </div>
 </template>
 
 <script>
-import menu from './Menu.vue';
+import Menu from './Menu.vue';
+import Header from './Header.vue';
 
 export default {
   components: {
-    myMenu: menu,
+    myMenu: Menu,
+    myHeader: Header,
   },
 };
 </script>
 
-<style>
+<style lang="scss">
 .page-header{
   box-sizing: border-box;
   position: fixed;
@@ -43,7 +46,7 @@ export default {
   width: 260px;
   overflow-y: scroll;
   padding: 24px;
-  border-right: 1px solid #eaecef;
+  border-right: $border;
 }
 .page-main{
   height: 100%;
