@@ -5,7 +5,7 @@
         <my-menu></my-menu>
       </aside>
       <main class="page-main">
-        <my-header></my-header>
+        <nav-bar></nav-bar>
         <router-view></router-view>
       </main>
     </div>
@@ -13,12 +13,12 @@
 
 <script>
 import Menu from './Menu.vue';
-import Header from './Header.vue';
+import NavBar from './NavBar.vue';
 
 export default {
   components: {
     myMenu: Menu,
-    myHeader: Header,
+    NavBar,
   },
 };
 </script>

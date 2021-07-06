@@ -35,13 +35,17 @@ import { getMobileInfo } from '@/api/demo';
 export default class About extends Vue {
   telNo = '';
 
-  telInfos = '';
+  telInfos = '123';
 
   async getInfo() {
     if (!this.telNo) {
       return;
     }
     this.telInfos = await getMobileInfo(this.telNo);
+  }
+
+  mounted() {
+    this.telInfos = this.$route.fullPath;
   }
 }
 </script>

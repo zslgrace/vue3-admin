@@ -13,12 +13,17 @@
 import { Options, Vue } from 'vue-class-component';
 import { RouteRecord } from 'vue-router';
 
-@Options({})
+@Options({
+  watch: {
+    $route() {
+      this.getBreadcrumb();
+    },
+  },
+})
 export default class Header extends Vue {
   routeList: RouteRecord[] = [];
 
   mounted() {
-    console.log(this.$route);
     this.getBreadcrumb();
   }
 

@@ -1,6 +1,9 @@
 <template>
-  <el-menu :active-text-color="variables.green" unique-opened>
-    <side-menu-item v-for="(route, index) in routes" :key="route.path" :item="route" :index="index"/>
+  <el-menu
+    :active-text-color="variables.green"
+    :default-active="activeMenu"
+    unique-opened>
+    <side-menu-item v-for="route in routes" :key="route.name" :item="route" />
   </el-menu>
 </template>
 
@@ -19,6 +22,11 @@ export default class Menu extends Vue {
   variables = variables;
 
   routes = dynamicRoutes.concat(constRoutes);
+
+  get activeMenu() {
+    const route = this.$route;
+    return route.name;
+  }
 }
 </script>
 

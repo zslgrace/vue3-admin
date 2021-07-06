@@ -25,14 +25,15 @@ export const constRoutes: Array<RouteRecordRaw> = [
     },
   },
   {
-    path: '/demo',
+    path: '/demos',
+    name: 'demos',
     component: Layout,
     meta: {
-      title: 'demo',
+      title: 'demos',
     },
     children: [
       {
-        path: '/about',
+        path: 'about',
         name: 'About',
         component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
         meta: {
@@ -46,13 +47,14 @@ export const constRoutes: Array<RouteRecordRaw> = [
 export const dynamicRoutes: Array<RouteRecordRaw> = [
   {
     path: '/accessControl',
+    name: 'accessControl',
     meta: {
       title: '权限管理',
     },
     component: Layout,
     children: [
       {
-        path: '/userInfo',
+        path: 'userInfo',
         name: 'userInfo',
         component: () => import(/* webpackChunkName: "userInfo" */ '../views/accessControl/UserInfo.vue'),
         meta: {
@@ -60,7 +62,7 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
         },
       },
       {
-        path: '/roleInfo',
+        path: 'roleInfo',
         name: 'roleInfo',
         component: () => import(/* webpackChunkName: "roleInfo" */ '../views/accessControl/RoleInfo.vue'),
         meta: {
@@ -68,7 +70,7 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
         },
       },
       {
-        path: '/menuInfo',
+        path: 'menuInfo',
         name: 'menuInfo',
         component: () => import(/* webpackChunkName: "menunfo" */ '../views/accessControl/MenuInfo.vue'),
         meta: {
