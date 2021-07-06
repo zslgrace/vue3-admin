@@ -1,13 +1,7 @@
 <template>
   <div class="about">
     <h1>This is a test page.</h1>
-    <el-container class='tel-search-box'>
-      <el-input placeholder="请输入手机号码"
-        v-model="telNo"
-        style='width: 300px; marginRight: 10px;'></el-input>
-      <el-button type="primary" round @click="getInfo">获取手机归属地信息</el-button>
-    </el-container>
-    <div>{{ telInfos }}</div>
+    <div>{{ Infos }}</div>
     <div class="demo">
       <div class="container">
         <div class="ul">
@@ -29,23 +23,13 @@
 
 <script>
 import { Options, Vue } from 'vue-class-component';
-import { getMobileInfo } from '@/api/demo';
 
 @Options({})
 export default class About extends Vue {
-  telNo = '';
-
-  telInfos = '123';
-
-  async getInfo() {
-    if (!this.telNo) {
-      return;
-    }
-    this.telInfos = await getMobileInfo(this.telNo);
-  }
+  Infos = '123';
 
   mounted() {
-    this.telInfos = this.$route.fullPath;
+    this.Infos = this.$route.fullPath;
   }
 }
 </script>

@@ -25,7 +25,8 @@ export default class Menu extends Vue {
 
   get activeMenu() {
     const route = this.$route;
-    return route.name;
+    console.log(route.path);
+    return route.path;
   }
 }
 </script>
@@ -35,7 +36,7 @@ export default class Menu extends Vue {
     border: none;
     text-align: left;
   }
-  .el-submenu.is-active .el-submenu__title{
+  .el-submenu.is-active >.el-submenu__title{
     color: $green;
   }
   .el-menu-item:hover, .el-menu-item:focus,

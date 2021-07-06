@@ -1,11 +1,11 @@
 <template>
   <section class="sideMenuItem" v-if="item.meta && !item.meta.hidden">
-    <el-menu-item v-if="!item.children" :index="item.name" @click="toPage(item.name)">
+    <el-menu-item v-if="!item.children" :index="item.path" @click="toPage(item.name)">
         <i class="menu_icon_actived"></i>
         <span>{{ item.meta.title }}</span>
     </el-menu-item>
 
-    <el-submenu v-else :index="item.name">
+    <el-submenu v-else :index="item.path">
         <template #title>
             <i :class="item.meta.icon"></i>
             <span>{{ item.meta.title }}</span>
