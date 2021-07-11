@@ -13,13 +13,20 @@ import {
   ElBreadcrumbItem,
   ElTable,
   ElTableColumn,
+  ElPagination,
 } from 'element-plus';
 import 'element-plus/packages/theme-chalk/src/base.scss';
+import lang from 'element-plus/lib/locale/lang/zh-cn';
+import 'dayjs/locale/zh-cn';
+import locale from 'element-plus/lib/locale';
 import App from './App.vue';
 import router from './router';
 import store from './store';
 import './style/base.css';
 import './style/reset.scss';
+import './style/element-variables.scss';
+
+locale.use(lang);
 
 createApp(App)
   .use(store)
@@ -37,4 +44,5 @@ createApp(App)
   .use(ElBreadcrumbItem)
   .use(ElTable)
   .use(ElTableColumn)
+  .use(ElPagination)
   .mount('#app');

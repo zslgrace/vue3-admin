@@ -17,7 +17,24 @@
         prop="createBy"
         label="创建人">
       </el-table-column>
+      <el-table-column
+        label="操作">
+        <template #default="scope">
+          <el-button @click="handleClick(scope.row)" type="text" size="small">修改</el-button>
+          <el-button type="text" size="small" class="btn-delete">删除</el-button>
+        </template>
+      </el-table-column>
   </el-table>
+  <el-pagination
+    class='table-pagination'
+    @size-change="handleSizeChange"
+    @current-change="handleCurrentChange"
+    :current-page="currentPage"
+    :page-sizes="[10, 20, 50, 100]"
+    :page-size="20"
+    layout="total, sizes, prev, pager, next, jumper"
+    :total="400">
+  </el-pagination>
   </div>
 </template>
 <script lang="ts">
@@ -39,10 +56,39 @@ export default class UserInfo extends Vue {
       createBy: 'admin',
     },
   ]
+
+  currentPage = 1;
+
+  handleClick(row: any) {
+    console.log(row);
+  }
+
+  handleSizeChange(val: number) {
+    console.log(`每页 ${val} 条`);
+  }
+
+  handleCurrentChange(val: number) {
+    console.log(`当前页: ${val}`);
+  }
 }
 </script>
 <style lang="scss" scope>
   .userInfo{
     padding: 30px;
+  }
+  .table-header{
+    text-align: center;
+  }
+  .btn-delete{
+    color: $red;
+    &:focus,
+    &:hover,
+    &:active{
+      color: $darkred;
+    }
+  }
+  .table-pagination{
+    margin-top: 10px;
+    text-align: right;
   }
 </style>
