@@ -6,7 +6,9 @@
       </aside>
       <main class="page-main">
         <nav-bar></nav-bar>
-        <router-view></router-view>
+        <div class="content">
+          <router-view></router-view>
+        </div>
       </main>
     </div>
 </template>

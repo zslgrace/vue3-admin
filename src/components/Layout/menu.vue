@@ -30,18 +30,3 @@ export default class Menu extends Vue {
   }
 }
 </script>
-
-<style lang="scss">
-  .el-menu{
-    border: none;
-    text-align: left;
-  }
-  .el-submenu.is-active >.el-submenu__title{
-    color: $green;
-  }
-  .el-menu-item:hover, .el-menu-item:focus,
-  .el-submenu__title:hover, .el-submenu__title:focus {
-    background-color: #fff;
-    color: $green;
-  }
-</style>

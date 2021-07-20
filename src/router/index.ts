@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 import Login from '../views/Login.vue';
 import Home from '../views/Home.vue';
 import Layout from '../components/Layout/index.vue';
+import canvasRoutes from './canvas';
 
 export const constRoutes: Array<RouteRecordRaw> = [
   {
@@ -84,6 +85,7 @@ export const constRoutes: Array<RouteRecordRaw> = [
       },
     ],
   },
+  ...canvasRoutes,
 ];
 
 export const dynamicRoutes: Array<RouteRecordRaw> = [
